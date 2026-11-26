@@ -1,0 +1,15 @@
+[package]
+name = "vmap-render"
+description = "wgpu renderer for vmap scenes. Renders to a texture, so it works in a window and headless."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+vmap-formats.workspace = true
+vmap-world.workspace = true
+anyhow.workspace = true
+bytemuck.workspace = true
+glam.workspace = true
+pollster.workspace = true
+wgpu = "30"

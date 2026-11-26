@@ -1,0 +1,22 @@
+[package]
+name = "vmap"
+description = "Map viewer and asset viewer for Generation V Pokemon games."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "vmap"
+path = "src/main.rs"
+
+[dependencies]
+vmap-formats.workspace = true
+vmap-fs.workspace = true
+vmap-world.workspace = true
+vmap-render.workspace = true
+vmap-ui.workspace = true
+vmap-mcp.workspace = true
+glam.workspace = true
+image.workspace = true
+anyhow.workspace = true
+clap.workspace = true

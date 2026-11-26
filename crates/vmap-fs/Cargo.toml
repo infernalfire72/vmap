@@ -1,0 +1,11 @@
+[package]
+name = "vmap-fs"
+description = "Access to a game's files: a CTRMap project (base + overlay), an extracted ROM folder, or a .nds image."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+vmap-formats.workspace = true
+anyhow.workspace = true
+memmap2.workspace = true

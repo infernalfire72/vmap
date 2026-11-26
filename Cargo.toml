@@ -1,0 +1,37 @@
+[workspace]
+resolver = "3"
+members = ["crates/*"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+license = "GPL-3.0-or-later"
+
+[workspace.dependencies]
+vmap-formats = { path = "crates/vmap-formats" }
+vmap-fs = { path = "crates/vmap-fs" }
+vmap-world = { path = "crates/vmap-world" }
+vmap-render = { path = "crates/vmap-render" }
+vmap-ui = { path = "crates/vmap-ui" }
+vmap-mcp = { path = "crates/vmap-mcp" }
+
+anyhow = "1"
+bytemuck = { version = "1", features = ["derive"] }
+clap = { version = "4", features = ["derive"] }
+glam = { version = "0.34", features = ["bytemuck"] }
+image = { version = "0.25", default-features = false, features = ["png"] }
+log = "0.4"
+memmap2 = "0.9"
+pollster = "1"
+thiserror = "2"
+
+# Keep our own code quick to rebuild, but run dependencies (image decoding,
+# wgpu, egui) optimised even in debug builds.
+[profile.dev]
+opt-level = 1
+
+[profile.dev.package."*"]
+opt-level = 3
+
+[profile.release]
+lto = "thin"
